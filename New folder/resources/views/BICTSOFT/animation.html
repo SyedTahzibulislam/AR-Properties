@@ -1,0 +1,62 @@
+
+
+<style>
+
+.tcontainer {
+  width: 100%;
+  overflow: hidden; /* Hide scroll bar */
+}
+ 
+/* MIDDLE CONTAINER */
+.ticker-wrap {
+  width: 100%;
+  padding-left: 100%; /* Push contents to right side of screen */
+  background-color: #eee;
+}
+
+/* INNER CONTAINER */
+@keyframes ticker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+.ticker-move {
+  /* Basically move items from right side of screen to left in infinite loop */
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 40s;
+}
+
+
+.ticker-move:hover{
+  animation-play-state: paused; /* Pause scroll on mouse hover */
+}
+
+/* ITEMS */
+.ticker-item{
+  display: inline-block; /* Lay items in a horizontal line */
+  padding: 0 2rem;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tcontainer"><div class="ticker-wrap"><div class="ticker-move">
+  <div class="ticker-item"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<h2></div>
+  <div class="ticker-item">Aliquam consequat varius consequat.</div>
+  <div class="ticker-item">Fusce dapibus turpis vel nisi malesuada sollicitudin.</div>
+  <div class="ticker-item">Pellentesque auctor molestie orci ut blandit.</div>
+</div></div></div>
